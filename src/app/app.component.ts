@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pipeIntro';
+
+  fecha1 = new Date();
+  idFormatoFecha = true; // true === shortDate; false == fullDate
+
+  get formatoFecha() {
+    return this.idFormatoFecha ? 'shortDate' : 'fullDate';
+  }
+
+  cambiarFormatoFecha() {
+    this.idFormatoFecha = !this.idFormatoFecha;
+  }
 }
